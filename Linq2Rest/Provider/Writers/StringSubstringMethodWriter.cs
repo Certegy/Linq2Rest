@@ -29,17 +29,17 @@ namespace Linq2Rest.Provider.Writers
 		public string Handle(MethodCallExpression expression, Func<Expression, string> expressionWriter)
 		{
 			Contract.Assert(expression.Arguments != null);
-			Contract.Assume(expression.Arguments.Count > 0);
+			//Contract.Assume(expression.Arguments.Count > 0);
 
 			var obj = expression.Object;
 
-			Contract.Assume(obj != null);
+			//Contract.Assume(obj != null);
 
 			if (expression.Arguments.Count == 1)
 			{
 				var argumentExpression = expression.Arguments[0];
 
-				Contract.Assume(argumentExpression != null);
+				//Contract.Assume(argumentExpression != null);
 
 				return string.Format(
 					"substring({0}, {1})", expressionWriter(obj), expressionWriter(argumentExpression));
@@ -48,8 +48,8 @@ namespace Linq2Rest.Provider.Writers
 			var firstArgument = expression.Arguments[0];
 			var secondArgument = expression.Arguments[1];
 
-			Contract.Assume(firstArgument != null);
-			Contract.Assume(secondArgument != null);
+			//Contract.Assume(firstArgument != null);
+			//Contract.Assume(secondArgument != null);
 
 			return string.Format(
 				"substring({0}, {1}, {2})", 

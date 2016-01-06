@@ -27,8 +27,8 @@ namespace Linq2Rest.Implementations
 		public XmlRestClient(Uri uri)
 			: base(uri, StringConstants.XmlMimeType)
 		{
-			Contract.Requires<ArgumentNullException>(uri != null);
-			Contract.Requires<ArgumentException>(uri.Scheme == Uri.UriSchemeHttp || uri.Scheme == Uri.UriSchemeHttps);
+			//Contract.Requires<ArgumentNullException>(uri != null);
+			//Contract.Requires<ArgumentException>(uri.Scheme == Uri.UriSchemeHttp || uri.Scheme == Uri.UriSchemeHttps);
 		}
 	}
 }

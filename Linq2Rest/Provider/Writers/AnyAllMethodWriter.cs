@@ -30,7 +30,7 @@ namespace Linq2Rest.Provider.Writers
 		{
 			Contract.Assert(expression.Method != null);
 			Contract.Assert(expression.Arguments != null);
-			Contract.Assume(expression.Arguments.Count > 1);
+			//Contract.Assume(expression.Arguments.Count > 1);
 
 			var firstArg = expressionWriter(expression.Arguments[0]);
 			var method = expression.Method.Name.ToLowerInvariant();

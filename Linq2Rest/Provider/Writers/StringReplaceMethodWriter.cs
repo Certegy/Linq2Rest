@@ -29,15 +29,15 @@ namespace Linq2Rest.Provider.Writers
 		public string Handle(MethodCallExpression expression, Func<Expression, string> expressionWriter)
 		{
 			Contract.Assert(expression.Arguments != null);
-			Contract.Assume(expression.Arguments.Count > 1);
+			//Contract.Assume(expression.Arguments.Count > 1);
 
 			var firstArgument = expression.Arguments[0];
 			var secondArgument = expression.Arguments[1];
 			var obj = expression.Object;
 
-			Contract.Assume(firstArgument != null);
-			Contract.Assume(secondArgument != null);
-			Contract.Assume(obj != null);
+			//Contract.Assume(firstArgument != null);
+			//Contract.Assume(secondArgument != null);
+			//Contract.Assume(obj != null);
 
 			return string.Format(
 				"replace({0}, {1}, {2})", 

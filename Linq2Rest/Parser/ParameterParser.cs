@@ -44,7 +44,7 @@ namespace Linq2Rest.Parser
 		public ParameterParser(IMemberNameResolver memberNameResolver)
 			: this(new FilterExpressionFactory(memberNameResolver, Enumerable.Empty<IValueExpressionFactory>()), new SortExpressionFactory(memberNameResolver), new SelectExpressionFactory<T>(memberNameResolver, new RuntimeTypeProvider(memberNameResolver)))
 		{
-			Contract.Requires<ArgumentNullException>(memberNameResolver != null);
+			//Contract.Requires<ArgumentNullException>(memberNameResolver != null);
 		}
 
 		/// <summary>
@@ -55,8 +55,8 @@ namespace Linq2Rest.Parser
 		public ParameterParser(IMemberNameResolver memberNameResolver, IEnumerable<IValueExpressionFactory> valueExpressionFactories)
 			: this(new FilterExpressionFactory(memberNameResolver, valueExpressionFactories), new SortExpressionFactory(memberNameResolver), new SelectExpressionFactory<T>(memberNameResolver, new RuntimeTypeProvider(memberNameResolver)))
 		{
-			Contract.Requires<ArgumentNullException>(memberNameResolver != null);
-			Contract.Requires<ArgumentNullException>(valueExpressionFactories != null);
+			//Contract.Requires<ArgumentNullException>(memberNameResolver != null);
+			//Contract.Requires<ArgumentNullException>(valueExpressionFactories != null);
 		}
 
 		/// <summary>
@@ -70,9 +70,9 @@ namespace Linq2Rest.Parser
 			ISortExpressionFactory sortExpressionFactory,
 			ISelectExpressionFactory<T> selectExpressionFactory)
 		{
-			Contract.Requires<ArgumentNullException>(filterExpressionFactory != null);
-			Contract.Requires<ArgumentNullException>(sortExpressionFactory != null);
-			Contract.Requires<ArgumentNullException>(selectExpressionFactory != null);
+			//Contract.Requires<ArgumentNullException>(filterExpressionFactory != null);
+			//Contract.Requires<ArgumentNullException>(sortExpressionFactory != null);
+			//Contract.Requires<ArgumentNullException>(selectExpressionFactory != null);
 
 			_filterExpressionFactory = filterExpressionFactory;
 			_sortExpressionFactory = sortExpressionFactory;

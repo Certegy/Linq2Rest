@@ -33,8 +33,8 @@ namespace Linq2Rest.Implementations
 		protected RestClientBase(Uri uri, string acceptHeader)
 			: this(uri, acceptHeader, new HttpRequestFactory())
 		{
-			Contract.Requires<ArgumentNullException>(uri != null);
-			Contract.Requires<ArgumentException>(uri.Scheme == Uri.UriSchemeHttp || uri.Scheme == Uri.UriSchemeHttps);
+			//Contract.Requires<ArgumentNullException>(uri != null);
+			//Contract.Requires<ArgumentException>(uri.Scheme == Uri.UriSchemeHttp || uri.Scheme == Uri.UriSchemeHttps);
 		}
 
 		/// <summary>
@@ -45,10 +45,10 @@ namespace Linq2Rest.Implementations
 		/// <param name="httpRequestFactory">The factory used to create Linq2Rest.Provider.IHttpRequest implementations.</param>
 		protected RestClientBase(Uri uri, string acceptHeader, IHttpRequestFactory httpRequestFactory)
 		{
-			Contract.Requires<ArgumentNullException>(uri != null);
-			Contract.Requires<ArgumentException>(uri.Scheme == Uri.UriSchemeHttp || uri.Scheme == Uri.UriSchemeHttps);
-			Contract.Requires<ArgumentException>(!string.IsNullOrWhiteSpace(acceptHeader));
-			Contract.Requires<ArgumentException>(httpRequestFactory != null);
+			//Contract.Requires<ArgumentNullException>(uri != null);
+			//Contract.Requires<ArgumentException>(uri.Scheme == Uri.UriSchemeHttp || uri.Scheme == Uri.UriSchemeHttps);
+			//Contract.Requires<ArgumentException>(!string.IsNullOrWhiteSpace(acceptHeader));
+			//Contract.Requires<ArgumentException>(httpRequestFactory != null);
 
 			_acceptHeader = acceptHeader;
 			_httpRequestFactory = httpRequestFactory;
@@ -141,7 +141,7 @@ namespace Linq2Rest.Implementations
 
 		private Stream GetResponseStream(Uri uri, HttpMethod method, Stream requestStream = null)
 		{
-			Contract.Requires(uri != null);
+			//Contract.Requires(uri != null);
 
 			var request = _httpRequestFactory.Create(uri, method, _acceptHeader, _acceptHeader);
 

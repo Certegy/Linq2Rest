@@ -24,10 +24,10 @@ namespace Linq2Rest.Provider
 	{
 		public RestQueryableBase(IRestClient client, ISerializerFactory serializerFactory, IMemberNameResolver memberNameResolver, IEnumerable<IValueWriter> valueWriters)
 		{
-			Contract.Requires<ArgumentException>(client != null);
-			Contract.Requires<ArgumentException>(serializerFactory != null);
-			Contract.Requires<ArgumentException>(memberNameResolver != null);
-			Contract.Requires<ArgumentException>(valueWriters != null);
+			//Contract.Requires<ArgumentException>(client != null);
+			//Contract.Requires<ArgumentException>(serializerFactory != null);
+			//Contract.Requires<ArgumentException>(memberNameResolver != null);
+			//Contract.Requires<ArgumentException>(valueWriters != null);
 
 			Client = client;
 			SerializerFactory = serializerFactory;

@@ -25,7 +25,7 @@ namespace Linq2Rest
 
 		public UntypedQueryable(IQueryable<T> source, Expression<Func<T, object>> projection)
 		{
-			Contract.Requires(projection == null || source != null);
+			//Contract.Requires(projection == null || source != null);
 
 			_source = projection == null
 						  ? (IQueryable)source

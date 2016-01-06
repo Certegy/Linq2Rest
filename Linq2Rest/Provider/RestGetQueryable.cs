@@ -25,10 +25,10 @@ namespace Linq2Rest.Provider
 		public RestGetQueryable(IRestClient client, ISerializerFactory serializerFactory, IMemberNameResolver memberNameResolver, IEnumerable<IValueWriter> valueWriters, Type sourceType)
 			: base(client, serializerFactory, memberNameResolver, valueWriters)
 		{
-			Contract.Requires<ArgumentNullException>(client != null);
-			Contract.Requires<ArgumentNullException>(serializerFactory != null);
-			Contract.Requires<ArgumentNullException>(memberNameResolver != null);
-			Contract.Requires<ArgumentNullException>(valueWriters != null);
+			//Contract.Requires<ArgumentNullException>(client != null);
+			//Contract.Requires<ArgumentNullException>(serializerFactory != null);
+			//Contract.Requires<ArgumentNullException>(memberNameResolver != null);
+			//Contract.Requires<ArgumentNullException>(valueWriters != null);
 
 			_restGetQueryProvider = new RestGetQueryProvider<T>(client, serializerFactory, new ExpressionProcessor(new ExpressionWriter(MemberNameResolver, ValueWriters), MemberNameResolver), MemberNameResolver, ValueWriters, sourceType);
 			Provider = _restGetQueryProvider;
@@ -38,11 +38,11 @@ namespace Linq2Rest.Provider
 		public RestGetQueryable(IRestClient client, ISerializerFactory serializerFactory, IMemberNameResolver memberNameResolver, IEnumerable<IValueWriter> valueWriters, Type sourceType, Expression expression)
 			: base(client, serializerFactory, memberNameResolver, valueWriters)
 		{
-			Contract.Requires<ArgumentNullException>(client != null);
-			Contract.Requires<ArgumentNullException>(serializerFactory != null);
-			Contract.Requires<ArgumentNullException>(memberNameResolver != null);
-			Contract.Requires<ArgumentNullException>(valueWriters != null);
-			Contract.Requires<ArgumentNullException>(expression != null);
+			//Contract.Requires<ArgumentNullException>(client != null);
+			//Contract.Requires<ArgumentNullException>(serializerFactory != null);
+			//Contract.Requires<ArgumentNullException>(memberNameResolver != null);
+			//Contract.Requires<ArgumentNullException>(valueWriters != null);
+			//Contract.Requires<ArgumentNullException>(expression != null);
 
 			_restGetQueryProvider = new RestGetQueryProvider<T>(client, serializerFactory, new ExpressionProcessor(new ExpressionWriter(MemberNameResolver, ValueWriters), MemberNameResolver), MemberNameResolver, ValueWriters, sourceType);
 			Provider = _restGetQueryProvider;

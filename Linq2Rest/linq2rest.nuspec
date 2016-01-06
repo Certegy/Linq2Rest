@@ -9,6 +9,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>
+      Removed Code Contracts
     </releaseNotes>
     <copyright></copyright>
     <dependencies>

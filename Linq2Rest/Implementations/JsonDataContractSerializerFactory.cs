@@ -34,7 +34,7 @@ namespace Linq2Rest.Implementations
 		/// <param name="knownTypes">A number of known types for serialization resolution.</param>
 		public JsonDataContractSerializerFactory(IEnumerable<Type> knownTypes)
 		{
-			Contract.Requires<ArgumentNullException>(knownTypes != null);
+			//Contract.Requires<ArgumentNullException>(knownTypes != null);
 
 			_knownTypes = knownTypes;
 		}
@@ -73,7 +73,7 @@ namespace Linq2Rest.Implementations
 
 			public JsonDataContractSerializer(IEnumerable<Type> knownTypes)
 			{
-				Contract.Requires(knownTypes != null);
+				//Contract.Requires(knownTypes != null);
 
 				var array = knownTypes.ToArray();
 				_serializer = new DataContractJsonSerializer(typeof(T), array);

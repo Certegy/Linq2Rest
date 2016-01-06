@@ -30,7 +30,7 @@ namespace Linq2Rest.Provider.Writers
 		{
 			var obj = expression.Object;
 
-			Contract.Assume(obj != null);
+			//Contract.Assume(obj != null);
 
 			return string.Format("trim({0})", expressionWriter(obj));
 		}

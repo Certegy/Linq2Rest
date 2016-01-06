@@ -32,10 +32,10 @@ namespace Linq2Rest.Provider
 
 		public RestQueryProvider(IRestClient client, ISerializerFactory serializerFactory, IExpressionProcessor expressionProcessor, IMemberNameResolver memberNameResolver, IEnumerable<IValueWriter> valueWriters, Type sourceType)
 		{
-			Contract.Requires(client != null);
-			Contract.Requires(serializerFactory != null);
-			Contract.Requires(expressionProcessor != null);
-			Contract.Requires(valueWriters != null);
+			//Contract.Requires(client != null);
+			//Contract.Requires(serializerFactory != null);
+			//Contract.Requires(expressionProcessor != null);
+			//Contract.Requires(valueWriters != null);
 
 			Client = client;
 			_serializerFactory = serializerFactory;
@@ -99,7 +99,7 @@ namespace Linq2Rest.Provider
 
 		public override object Execute(Expression expression)
 		{
-			Contract.Assume(expression != null);
+			//Contract.Assume(expression != null);
 
 			var methodCallExpression = expression as MethodCallExpression;
 			var resultsLoaded = false;
@@ -149,15 +149,15 @@ namespace Linq2Rest.Provider
 
 		protected override IEnumerable<T> GetResults(ParameterBuilder builder)
 		{
-			Contract.Requires(builder != null);
-			Contract.Ensures(Contract.Result<IEnumerable<T>>() != null);
+			//Contract.Requires(builder != null);
+			//Contract.Ensures(Contract.Result<IEnumerable<T>>() != null);
 
 			throw new NotImplementedException();
 		}
 
 		protected override IEnumerable GetIntermediateResults(Type type, ParameterBuilder builder)
 		{
-			Contract.Requires(builder != null);
+			//Contract.Requires(builder != null);
 
 			throw new NotImplementedException();
 		}

@@ -35,7 +35,7 @@ namespace Linq2Rest.Implementations
 		/// <param name="knownTypes">A number of known types for serialization resolution.</param>
 		public XmlDataContractSerializerFactory(IEnumerable<Type> knownTypes)
 		{
-			Contract.Requires<ArgumentNullException>(knownTypes != null);
+			//Contract.Requires<ArgumentNullException>(knownTypes != null);
 
 			_knownTypes = knownTypes;
 		}
@@ -74,7 +74,7 @@ namespace Linq2Rest.Implementations
 
 			public XmlDataContractSerializer(IEnumerable<Type> knownTypes)
 			{
-				Contract.Requires(knownTypes != null);
+				//Contract.Requires(knownTypes != null);
 
 				var array = knownTypes.ToArray();
 				_serializer = new DataContractSerializer(typeof(T), array);

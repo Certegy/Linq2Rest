@@ -33,7 +33,7 @@ namespace Linq2Rest.Provider
 		/// <returns>A task returning the query result.</returns>
 		public static Task<IEnumerable<T>> ExecuteAsync<T>(this IQueryable<T> queryable)
 		{
-			Contract.Requires<ArgumentNullException>(queryable != null);
+			//Contract.Requires<ArgumentNullException>(queryable != null);
 
 			return Task.Factory.StartNew(() => queryable.ToArray().AsEnumerable());
 		}
@@ -47,7 +47,7 @@ namespace Linq2Rest.Provider
 		/// <returns>An <see cref="IQueryable{T}"/> for continued querying.</returns>
 		public static IQueryable<TSource> Expand<TSource>(this IQueryable<TSource> source, string paths)
 		{
-			Contract.Requires<ArgumentNullException>(source != null);
+			//Contract.Requires<ArgumentNullException>(source != null);
 
 			if (!(source is RestQueryableBase<TSource>))
 			{
@@ -71,8 +71,8 @@ namespace Linq2Rest.Provider
 		/// <returns>An <see cref="IQueryable{T}"/> for continued querying.</returns>
 		public static IQueryable<TSource> Expand<TSource>(this IQueryable<TSource> source, IMemberNameResolver memberNameResolver, params Expression<Func<TSource, object>>[] properties)
 		{
-			Contract.Requires<ArgumentNullException>(source != null);
-			Contract.Assume(properties != null);
+			//Contract.Requires<ArgumentNullException>(source != null);
+			//Contract.Assume(properties != null);
 
 			var propertyNames = string.Join(",", properties.Where(x => x != null).Select(property => ResolvePropertyName(property, memberNameResolver)));
 
@@ -89,7 +89,7 @@ namespace Linq2Rest.Provider
 		/// <returns></returns>
 		public static IQueryable<TResult> Post<TResult, TInput>(this IQueryable<TResult> source, TInput input)
 		{
-			Contract.Requires<ArgumentException>(!ReferenceEquals(input, null));
+			//Contract.Requires<ArgumentException>(!ReferenceEquals(input, null));
 
 			var restQueryable = source as RestQueryableBase<TResult>;
 			if (restQueryable != null)
@@ -112,7 +112,7 @@ namespace Linq2Rest.Provider
 		/// <returns></returns>
 		public static IQueryable<TResult> Put<TResult, TInput>(this IQueryable<TResult> source, TInput input)
 		{
-			Contract.Requires<ArgumentException>(!ReferenceEquals(input, null));
+			//Contract.Requires<ArgumentException>(!ReferenceEquals(input, null));
 
 			var restQueryable = source as RestQueryableBase<TResult>;
 			if (restQueryable != null)
@@ -144,7 +144,7 @@ namespace Linq2Rest.Provider
 
 		private static string ResolvePropertyName<TSource>(Expression<Func<TSource, object>> property, IMemberNameResolver memberNameResolver)
 		{
-			Contract.Requires(property != null);
+			//Contract.Requires(property != null);
 
 			var pathPrefixes = new List<string>();
 
