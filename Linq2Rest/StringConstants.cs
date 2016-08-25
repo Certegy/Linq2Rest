@@ -12,6 +12,22 @@
 
 namespace Linq2Rest
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    public enum TestStatus
+    {
+        /// <summary>
+        /// ddddd
+        /// </summary>
+        Initial = 0,
+
+        /// <summary>
+        /// dddd
+        /// </summary>
+        Authenticate = 1
+    }
+
 	internal static class StringConstants
 	{
 		internal const string OrderByParameter = "$orderby";

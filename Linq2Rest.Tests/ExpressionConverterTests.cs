@@ -19,5 +19,13 @@ namespace Linq2Rest.Tests {
 
             Assert.AreEqual("Date", dump);
         }
+
+        [TestMethod]
+        public void Test_EnumTypes()
+        {
+            var service = new ExpressionConverter();
+            var dump = service.ConvertOrder<SimpleClass>(v => v.Status == TestStatus.Initial);
+            Assert.AreEqual("Status eq Linq2Rest.TestStatus'Initial'", dump);
+        }
     }
 }
