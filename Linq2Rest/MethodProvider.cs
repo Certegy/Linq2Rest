@@ -54,9 +54,12 @@ namespace Linq2Rest
 			InnerStartsWithMethod = stringType.GetMethod("StartsWith", new[] { stringType });
 			InnerLengthProperty = stringType.GetProperty("Length", Type.EmptyTypes);
 			InnerSubstringMethod = stringType.GetMethod("Substring", new[] { typeof(int) });
-			InnerToLowerMethod = stringType.GetMethod("ToLowerInvariant", Type.EmptyTypes);
-			InnerToUpperMethod = stringType.GetMethod("ToUpperInvariant", Type.EmptyTypes);
-			InnerTrimMethod = stringType.GetMethod("Trim", Type.EmptyTypes);
+
+            // Changed from ToLowerInvariant and ToUpperInvariant to support queries to Oracle.
+            InnerToLowerMethod = stringType.GetMethod("ToLower", Type.EmptyTypes);
+			InnerToUpperMethod = stringType.GetMethod("ToUpper", Type.EmptyTypes);
+
+            InnerTrimMethod = stringType.GetMethod("Trim", Type.EmptyTypes);
 
 			InnerDayProperty = datetimeType.GetProperty("Day", Type.EmptyTypes);
 			InnerHourProperty = datetimeType.GetProperty("Hour", Type.EmptyTypes);
