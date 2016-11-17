@@ -1,0 +1,9 @@
+language: csharp
+solution: Linq2Rest.sln
+install:
+  - nuget restore Linq2Rest.sln
+notifications:
+  email:
+    - devadmin@certegy.com.au
+    - ryan.bartsch@certegy.com.au
+  slack: certegy:SlackToken
